@@ -53,7 +53,6 @@ export const addCollectionadnDocument = async (collectionkey, objetsToAdd) => {
     batch.set(docRef, object);
   });
   await batch.commit();
-  console.log("done");
 };
 
 export const getCategoriesAndDocuments = async () => {
