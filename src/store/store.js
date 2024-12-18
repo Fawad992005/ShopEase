@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { rootReducer } from "./root-reducer";
 import { persistReducer, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import storageSession from "redux-persist/lib/storage/session"; // Use sessionStorage
 
 const persistConfig = {
   key: "root",
-  storage,
-  blacklist: ["user"],
+  storage: storageSession, // Replace with sessionStorage
+  blacklist: ["user"], // Exclude user from persistence
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -16,7 +16,6 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        // Ignore these action types
         ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
       },
     }),
