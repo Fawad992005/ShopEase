@@ -1,22 +1,50 @@
 .cart-icon-container {
-    width: 45px;
-    height: 45px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .shopping-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .item-count {
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    bottom: 12px;
+  }
+
+  // Responsive styles
+  @media screen and (max-width: 768px) {
+    width: 50px; // Slightly larger on tablets
+    height: 50px;
     .shopping-icon {
-      width: 24px;
-      height: 24px;
+      width: 28px; // Adjust icon size
+      height: 28px;
     }
-  
+
     .item-count {
-      position: absolute;
-      font-size: 10px;
-      font-weight: bold;
-      bottom: 12px;
+      font-size: 12px; // Larger item count on tablets
+      bottom: 14px;
     }
   }
-  
+
+  @media screen and (max-width: 480px) {
+    width: 40px; // Smaller on mobile
+    height: 40px;
+    .shopping-icon {
+      width: 22px; // Adjust icon size for mobile
+      height: 22px;
+    }
+
+    .item-count {
+      font-size: 8px; // Smaller item count on mobile
+      bottom: 10px;
+    }
+  }
+}

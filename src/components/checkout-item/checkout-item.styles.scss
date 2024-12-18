@@ -1,42 +1,68 @@
 .checkout-item-container {
-    width: 100%;
-    display: flex;
-    min-height: 100px;
-    border-bottom: 1px solid darkgrey;
-    padding: 15px 0;
-    font-size: 20px;
-    align-items: center;
-  
-    .image-container {
-      width: 23%;
-      padding-right: 15px;
-  
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .name,
-    .quantity,
-    .price {
-      width: 23%;
-    }
-  
-    .quantity {
-      display: flex;
-  
-      .arrow {
-        cursor: pointer;
-      }
-  
-      .value {
-        margin: 0 10px;
-      }
-    }
-  
-    .remove-button {
-      padding-left: 12px;
-      cursor: pointer;
+  width: 100%;
+  display: flex;
+  min-height: 100px;
+  border-bottom: 1px solid darkgrey;
+  padding: 15px 0;
+  font-size: 20px;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to new lines when needed */
+
+  .image-container {
+    width: 23%;
+    padding-right: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
   
+  .name,
+  .quantity,
+  .price {
+    width: 23%;
+  }
+
+  .quantity {
+    display: flex;
+    justify-content: center; /* Center align buttons */
+    align-items: center; /* Vertically center the buttons */
+    gap: 10px; /* Add space between the buttons */
+  }
+
+  .remove-button {
+    padding-left: 12px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center; /* Align all items in the center */
+
+    .image-container {
+      width: 50%;
+      margin: 10px 0;
+    }
+
+    .name,
+    .quantity,
+    .price {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .quantity {
+      width: 100%;
+      justify-content: center; /* Center buttons */
+    }
+
+    .remove-button {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center; /* Center the remove button */
+    }
+  }
+}

@@ -1,30 +1,62 @@
 .cart-dropdown-container {
-    position: absolute;
-    width: 300px;
-    height: 340px;
+  position: absolute;
+  width: 300px; // Default width
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+
+  .empty-message {
+    font-size: 18px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .cart-items {
+    height: 300px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border: 1px solid black;
-    background-color: white;
-    top: 90px;
-    right: 40px;
-    z-index: 5;
-  
+    overflow: auto;
+  }
+
+  button {
+    margin-top: auto;
+  }
+
+  // Responsive styles
+  @media screen and (max-width: 768px) {
+    width: 250px; // Slightly smaller on tablets
+    top: 80px;
+    right: 20px;
+
     .empty-message {
-      font-size: 18px;
-      margin: 50px auto;
-    }
-  
-    .cart-items {
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      overflow: auto;
-    }
-  
-    button {
-      margin-top: auto;
+      font-size: 16px;
     }
   }
-  
+
+  @media screen and (max-width: 480px) {
+    width: 220px; // Smaller for mobile
+    height: 320px;
+    top: 70px;
+    right: 10px;
+    padding: 15px;
+
+    .empty-message {
+      font-size: 14px;
+    }
+
+    .cart-items {
+      height: 280px; // Adjust height
+    }
+
+    button {
+      font-size: 12px; // Smaller button font for smaller screens
+      padding: 10px;
+    }
+  }
+}

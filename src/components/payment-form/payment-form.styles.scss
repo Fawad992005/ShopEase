@@ -1,13 +1,33 @@
-.payment-form-container{
+.payment-form-container {
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-}
-
-.form-container{
-        height: 100px;
-        min-width: 500px;
-}
+  }
+  
+  .form-container {
+    height: 100px;
+    min-width: 500px;
+  
+    // Responsive styles
+    @media screen and (max-width: 768px) {
+      min-width: 400px; // Adjust width for tablets
+    }
+  
+    @media screen and (max-width: 480px) {
+      min-width: 100%; // Full width on mobile
+      height: 120px; // Increase height on mobile for better layout
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .payment-form-container {
+      height: auto; // Auto height on mobile for better space utilization
+    }
+  
+    .form-container {
+      height: auto; // Auto height to fit content on mobile
+    }
+  }
+  

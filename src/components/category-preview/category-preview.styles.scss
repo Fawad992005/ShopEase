@@ -1,18 +1,30 @@
 .category-preview-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-  
-    .title {
-      font-size: 28px;
-      margin-bottom: 25px;
-      cursor: pointer;
-    }
-  
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    cursor: pointer;
+  }
+
+  .preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+  }
+
+  // Responsive styles
+  @media screen and (max-width: 768px) {
     .preview {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      column-gap: 20px;
+      grid-template-columns: repeat(2, 1fr); // Two columns on tablets
     }
   }
-  
+
+  @media screen and (max-width: 480px) {
+    .preview {
+      grid-template-columns: 1fr; // One column on mobile
+    }
+  }
+}

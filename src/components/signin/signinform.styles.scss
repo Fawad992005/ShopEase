@@ -1,12 +1,26 @@
-.sign-up-container{
+.sign-up-container {
     display: flex;
     flex-direction: column;
     width: 380px;
-    h2{
-        margin: 10px 0px;
+  
+    h2 {
+      margin: 10px 0px;
     }
-    .buttons-container{
-        display: flex;
-        justify-content: space-between;
+  
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
-}
+  
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 0 15px;
+  
+      .buttons-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  

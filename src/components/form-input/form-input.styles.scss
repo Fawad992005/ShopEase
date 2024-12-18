@@ -51,4 +51,13 @@ $main-color: black;
       @include shrinkLabel();
     }
   }
+
+  // Responsive styles
+  @media screen and (max-width: 768px) {
+    margin: 30px 0; // Reduce margin for tablets
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 20px 0; // Further reduce margin for mobile
+  }
 }
