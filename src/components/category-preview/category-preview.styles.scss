@@ -19,6 +19,8 @@
   @media screen and (max-width: 768px) {
     .preview {
       grid-template-columns: repeat(2, 1fr); // Two columns on tablets
+      column-gap: 50px;
+      row-gap: 30px;
     }
   }
 

@@ -16,6 +16,7 @@
     .header-block {
       text-transform: capitalize;
       width: 23%;
+      text-align: center;
 
       &:last-child {
         width: 8%;
@@ -29,19 +30,46 @@
     font-size: 36px;
   }
 
+  // Responsive adjustments
+  @media screen and (max-width: 1024px) {
+    width: 90%; // Widen the container on medium screens
+  }
+
   @media screen and (max-width: 768px) {
-    width: 90%;
+    width: 95%;
+    margin: 20px auto;
 
     .checkout-header {
-      flex-direction: column;
+      flex-direction: row;
+      
+      text-align: center;
+
       .header-block {
-        width: 100%;
-        text-align: center;
+        width: 48%; // Two headers per row on smaller screens
+        margin-bottom: 5px;
       }
     }
 
     .total {
-      font-size: 24px;
+      font-size: 28px;
+      margin-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .checkout-header {
+      display: none;
+
+      .header-block {
+        width: 100%; // Each header occupies full width
+        margin-bottom: 8px;
+      }
+    }
+
+    .total {
+      font-size: 20px;
+      margin-top: 15px;
+      text-align: center;
     }
   }
 }
