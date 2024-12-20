@@ -19,6 +19,7 @@ const PaymentForm = () => {
     google: "google-sign-in",
     inverted: "inverted",
   };
+
   const paymentHandler = async (e) => {
     e.preventDefault();
 

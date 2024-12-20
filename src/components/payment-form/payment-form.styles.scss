@@ -4,11 +4,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
   
   .form-container {
     height: 100px;
     min-width: 500px;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
   
     // Responsive styles
     @media screen and (max-width: 768px) {
@@ -23,7 +27,7 @@
   
   @media screen and (max-width: 480px) {
     .payment-form-container {
-      height: auto; // Auto height on mobile for better space utilization
+      width: 70%; // Auto height on mobile for better space utilization
     }
   
     .form-container {
